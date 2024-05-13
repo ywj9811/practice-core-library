@@ -38,12 +38,15 @@ dependencies {
 
 publishing {
 	publications {
-		maven(MavenPublication) {
-			groupId = 'com.library.demo'
-			artifactId = 'core'
-			version = '0.0.2'
-
-			from components.java
+		mavenJava(MavenPublication) {
+			versionMapping {
+				usage('java-api') {
+					fromResolutionOf('runtimeClasspath')
+				}
+				usage('java-runtime') {
+					fromResolutionResult()
+				}
+			}
 		}
 	}
 }
