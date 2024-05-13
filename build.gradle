@@ -6,7 +6,7 @@ plugins {
 }
 
 group = 'com.library'
-version = '0.0.1'
+version = '0.1.0'
 
 java {
 	sourceCompatibility = '17'
@@ -29,7 +29,6 @@ dependencyManagement {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-web'
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
@@ -41,7 +40,7 @@ publishing {
 		maven(MavenPublication) {
 			groupId = 'com.library.demo'
 			artifactId = 'core'
-			version = '0.0.1'
+			version = '0.1.0'
 
 			from components.java
 		}
