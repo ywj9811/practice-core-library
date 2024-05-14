@@ -20,6 +20,7 @@ configurations {
 
 repositories {
 	mavenCentral()
+	maven { url "https://jitpack.io" }
 }
 
 dependencyManagement {
@@ -38,11 +39,21 @@ dependencies {
 
 publishing {
 	publications {
-		mavenJava(MavenPublication) {
+//		mavenJava(MavenPublication) {
+//			versionMapping {
+//				usage('java-api') {
+//					fromResolutionOf('runtimeClasspath')
+//				}
+//				usage('java-runtime') {
+//					fromResolutionResult()
+//				}
+//			}
+//		}
+		maven(MavenPublication) {
+			groupId = 'com.library.demo'
+			artifactId = 'core'
+			from components.java
 			versionMapping {
-				usage('java-api') {
-					fromResolutionOf('runtimeClasspath')
-				}
 				usage('java-runtime') {
 					fromResolutionResult()
 				}
